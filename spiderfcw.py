@@ -16,6 +16,13 @@ headers = {
     "Connection": "keep-alive",
     "Upgrade-Insecure-Requests": "1"
 }
+# url_p = "http://localhost:5000/get"
+# html = requests.get(url_p)
+# proxy = html.text
+# proxies = {
+#     "http":proxy,
+#     "https":proxy
+# }
 response = requests.get(url,headers=headers)
 req = response.text
 # response = urllib.request.urlopen(url)
@@ -32,4 +39,9 @@ for mm in m_tr:
     else:
         urllib.request.urlretrieve(mm, r'E:\test\%s.mp4' % name)
         print(name,"下载完成")
+        # sp = requests.get(mm,headers=headers,proxies=proxies)
+        # f = open(r'E:\test\%s.mp4' % name, 'wb')
+        # f.write(sp.content)
+        # f.close()
+        # print(name, "下载完成")
 
